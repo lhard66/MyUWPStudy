@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="MyUWPStudy.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MyUWPStudy"
+    xmlns:ucontrol="using:MyUWPStudy.CustomerControllers"    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">  
+  
+     
+    <!--<StackPanel>
+        <ucontrol:UserControl_VisualState x:Name="player" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="6"/>
+        <ucontrol:UserLogin HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,5" Width="263" Height="116" />
+    </StackPanel>-->
+    <Grid Background="Azure">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel >
+            <TextBox x:Name="txtBind" Margin="5" Text="{Binding Path=BelongClass.ClassAge,Mode=TwoWay}"/>
+            <TextBox x:Name="txtNum" Margin="5" Text="{Binding ElementName=txtBind,Path=Text,Mode=TwoWay}"/>
+            <Button x:Name="btnAdd" Content="增加" Click="btnAdd_Click" HorizontalAlignment="Stretch" Margin="5"/>
+            <Button x:Name="btnShow" Content="显示" Click="btnShow_Click" HorizontalAlignment="Stretch" Margin="5"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="lvStu" ItemsSource="{Binding}"                      
+                      DisplayMemberPath="Name" />            
+            <Button Content="Delete Student" x:Name="RemoveStu" Grid.Row="1" HorizontalAlignment="Stretch" Click="RemoveStu_Click"/>
+
+        </Grid>
+    </Grid>    
+    
+</Page>
