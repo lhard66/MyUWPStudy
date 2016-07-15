@@ -14,7 +14,7 @@
                 <VisualState>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="600"/>
-                        <local:PicAndWordTrigger/>
+                        <!--<local:PicAndWordTrigger/>-->
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="word1.(RelativePanel.Below)" Value=""/>
